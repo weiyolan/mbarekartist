@@ -1,0 +1,89 @@
+
+.service__container {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-basis: 150px; */
+    max-width: 200px;
+    /* position:relative; */
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    /* margin: 40px; */
+    /* margin-left:50px; */
+    color: white;
+    /* border:1px red solid; */
+}
+
+.service__container h1 {
+    font-size: 1.5rem;
+    /* max-width: ; */
+}
+
+.service__img-container {
+    display: flex;
+    /* position: absolute; */
+    justify-content: center;
+    align-items: flex-start;
+    border: 0.3rem solid  #fff;
+    border-radius: 50%;
+    /* flex-width: 80%; */
+    /* height: 180px; */
+    margin-bottom: 10px;
+    padding:0px;
+    /* overflow: visible; */
+    transition: all 0.2s ease;
+}
+
+.service__container img {
+    flex:1;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(355deg) brightness(104%) contrast(103%);
+    padding:20px;
+    width:100%;
+    transition: all 20s ease;
+    transform: rotate(0deg);
+}
+
+.service__img-container:hover{
+    transform: scale(1.05);
+    border: 0.28rem solid  #fff;
+    border-radius: 0%;
+    filter: drop-shadow(0 0 0.6rem rgba(255, 255, 255, 0.342));
+
+}
+
+@media only screen and (max-width:900px) {
+    .service__container {
+        max-width: 100%;
+        width: 100%;
+    }
+}@media only screen and (max-width:700px) {
+    .service__container {
+        width: 40vw;
+    }
+}@media only screen and (max-width:400px) {
+    .service__img-container {
+        border: 0.2rem solid  #fff;
+    }
+    .service__img-container:hover{
+        border: 0.22rem solid  #fff;    
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .service__img-container:hover img {
+        /* animation: App-logo-spin infinite 20s ease; */
+        transform: rotate(720deg)
+    }
+}
+
+/* @keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    
+    
+    to {
+      transform: rotate(360deg);
+    }
+} */

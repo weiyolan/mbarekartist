@@ -1,0 +1,68 @@
+ 
+.artpiece__card {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 100%;
+    width: 100%;
+    /* border: 2px  */
+    /* outline: solid 10px var(--orange-blue-text); */
+    /* outline: solid 2px rgb(0, 0, 0); */
+    /* outline-offset: -2px; */
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+    
+    transition: all 0.2s ease;
+}
+
+.artpiece__card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.artpiece__card img, .card__delete img {
+    width: 102%;
+    height: 102%;
+
+    object-fit: cover;
+    /* height:120%; */
+    /* display: block; */
+    
+    /* height:100% */
+}
+
+.button {
+    display: flex;
+    position: absolute;
+    bottom:0.2rem;
+    right:0.2rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 0.7rem;
+    padding:2px 3px;
+    border-radius: 10px;
+
+    transition:all 0.2s ease;
+    /* background-color: white; */
+    /* width: 20%; */
+    /* height:20%; */
+    /* font-size:  */
+}
+
+
+.card__delete span {
+    font-size: 1rem;
+    font-weight: bolder;
+    color:red;  
+}
+
+.button :hover {
+    font-size: 1.1rem;
+    
+    /* transform: scale(1,05); */
+}

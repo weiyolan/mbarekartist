@@ -1,0 +1,21 @@
+.card__delete {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+
+    /* width:100%; */
+    /* border: 2px  */
+    /* outline: solid 10px var(--orange-blue-text); */
+    /* outline: solid 2px white; */
+    /* outline-offset: -2px; */
+    /* border-radius: 10px; */
+    margin: 0.2rem;
+    width: 100px;
+    height: 100px;
+    
+}
+
+.deleted {
+    display: none;
+}

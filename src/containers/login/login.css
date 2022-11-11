@@ -1,0 +1,21 @@
+.login__container{
+    margin:50px;
+}
+
+.login__container form{
+    display:flex;
+    flex-direction: column;
+    margin: 20px;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.login__container input{
+    /* padding: 0 40px; */
+    margin-left:20px;
+}
+
+.login__container button {
+    /* max-width: 50%; */
+    margin: 0 auto;
+}

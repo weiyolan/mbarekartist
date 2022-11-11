@@ -1,0 +1,41 @@
+.header__navbar {
+    background-color: #ffffff31;
+    position: fixed;
+
+    top:0px;
+    width: 100%;
+    z-index: 1;
+    height: 60px;
+
+    font-weight: 500;
+
+    backdrop-filter: blur(2px);
+}
+
+.header__navbar a{
+    color:black;
+    text-decoration: none;
+}
+
+
+.header__navbar img {
+    margin: 0;
+    padding:0;
+    /* backdrop-filter: blur(2px); */
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .header__navbar img {
+        animation: App-logo-spin infinite 20s ease;
+    }
+}
+
+@keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}

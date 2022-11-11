@@ -1,0 +1,67 @@
+.form__container {
+    display: flex;
+    /* flex-direction: row; */
+    /* position:absolute; */
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+   
+    /* margin-top: 100px; */
+}
+
+.form__container form {
+    flex: 1;
+    /* flex-direction: column; */
+}
+
+.upload__button{
+    margin-top: 50px;
+    width: 50%;
+    /* display: block; */
+    /* height:30%; */
+}
+
+.loading__container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top:0px;
+    left:0px;
+    width: 100vw;
+    height:100vh;
+    z-index:100;
+    background:-moz-radial-gradient(circle at 16% 30%, rgba(255, 85, 0, var(--transp)) 0%, rgba(74, 113, 225, var(--transp)) 100%);
+    background:-webkit-radial-gradient(circle at 16% 30%, rgba(255, 85, 0, var(--transp)) 0%, rgba(74, 113, 225, var(--transp)) 100%);
+    background:-o-radial-gradient(circle at 16% 30%, rgba(255, 85, 0, var(--transp)) 0%, rgba(74, 113, 225, var(--transp)) 100%);
+    background:-ms-radial-gradient(circle at 16% 30%, rgba(255, 85, 0, var(--transp)) 0%, rgba(74, 113, 225, var(--transp)) 100%);
+    background:radial-gradient(circle at 16% 30%, rgba(255, 85, 0, var(--transp)) 0%, rgba(74, 113, 225, var(--transp)) 100%);
+}
+
+.loading__message {
+    margin:0 auto;
+    color: white;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .upload__button {
+        animation: floatButton infinite 2s ease-in-out;
+        /* transform: translateX(100%); */
+        
+        
+    }
+    .upload__button:hover {
+        animation-play-state: paused;
+        transform: scale(1.2);
+    }
+    
+}
+
+@keyframes floatButton {
+    0% {transform: scale(1.2);}
+
+    50% {transform: scale(1);}
+
+    100% {transform: scale(1.2);}
+}

@@ -1,0 +1,64 @@
+.gallery__container {
+    position:absolute;
+    top:0px;
+    min-width: 100%;
+    min-height: 100vh;
+    /* height:100vh; */
+    background-image: url('../../images/layout/gallery1080p.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* overflow: scroll; */
+
+    color:white;
+}
+
+.gallery__container h1 {
+    margin-top:70px;   
+    /* padding: 0 10px; */
+    
+}
+
+.gradient__text {
+    background: var(--orange-blue-text);
+    background-clip:text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.wave-line__container {
+    width:100%;
+    position: relative;
+    overflow: hidden;
+}
+.wave-line {
+    width: 120%;
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* width */
+    height: 20px;
+    background-image: url('../../images/pattern/waves.svg');
+    background-size:contain ;
+    margin-top:15px;
+    /* transform: translateX(20px); */
+}
+
+.gallery__container .wave-line {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(355deg) brightness(104%) contrast(103%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .wave-line {
+        animation: waves infinite 5s ease-in-out;
+        /* transform: translateX(100%); */
+    }
+}
+
+@keyframes waves {
+    0% {transform: translateX(-15px);}
+
+    50% {transform: translateX(-5px);}
+
+    100% {transform: translateX(-15px);}
+}
