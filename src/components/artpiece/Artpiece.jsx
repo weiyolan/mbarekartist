@@ -10,25 +10,25 @@ const Artpiece = (props) => {
     let [likeload,setLikeload] = useState(false);
 
 
-    async function unlike(id) {
-        let [name, oldlikes] = await axios.get(`https://api.airtable.com/v0/appfB05UOD1hI2FE4/art/${id}`,{headers: {Authorization: "Bearer keyoGVRavQjrgVp6e"}}).then((resp)=>{
-            return [resp.data.fields.name, resp.data.fields.likes]
-        }).catch(e=>e);
+    // async function unlike(id) {
+    //     let [name, oldlikes] = await axios.get(`https://api.airtable.com/v0/appfB05UOD1hI2FE4/art/${id}`,{headers: {Authorization: "Bearer keyoGVRavQjrgVp6e"}}).then((resp)=>{
+    //         return [resp.data.fields.name, resp.data.fields.likes]
+    //     }).catch(e=>e);
 
-        let newData = {records:[
-            {id: id,
-            fields:{
-                name: name,
-                likes: oldlikes-1
-            }}
-        ]};
+    //     let newData = {records:[
+    //         {id: id,
+    //         fields:{
+    //             name: name,
+    //             likes: oldlikes-1
+    //         }}
+    //     ]};
         
-        axios.patch(`https://api.airtable.com/v0/appfB05UOD1hI2FE4/art`, newData, {
-            headers: {
-                Authorization: "Bearer keyoGVRavQjrgVp6e", 
-                "Content-Type": "application/json"
-            }}).then((res)=>{return res}).catch(e=>e)
-    };
+    //     axios.patch(`https://api.airtable.com/v0/appfB05UOD1hI2FE4/art`, newData, {
+    //         headers: {
+    //             Authorization: "Bearer keyoGVRavQjrgVp6e", 
+    //             "Content-Type": "application/json"
+    //         }}).then((res)=>{return res}).catch(e=>e)
+    // };
 
     const plusOne = () => {
         // let prevLike = likes;
@@ -56,7 +56,13 @@ const Artpiece = (props) => {
 
         async function tryUnlike() {
             // axios.put(`http://localhost:4000/api/unlike/${props.artID}`).then((res)=>{
-            unlike(props.artID).then((res)=>{    
+            fetch('/.netlify/functions/unlike', { 
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                        },
+                    body: JSON.stringify(props.artID)
+                }).then((res)=>{    
                 setLiked(false);
                 setLikeload(false);
                 console.log('Artpiece unliked!');

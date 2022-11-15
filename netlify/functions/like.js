@@ -6,8 +6,9 @@ const TBL = process.env.REACT_APP_API_ID;
 
 const handler = async (event, context) => {
 
-    const params = querystring.parse(event.body);
-    console.log(params);
+    let id = event.body;
+    // const params = querystring.parse(event.body);
+    // console.log(params);
 
     // console.log(`https://api.airtable.com/v0/appfB05UOD1hI2FE4/art/${id}`)
     let [name, oldlikes] = await axios.get(`https://api.airtable.com/v0/${TBL}/art/${id}`, {

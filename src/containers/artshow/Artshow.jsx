@@ -59,8 +59,8 @@ const Artshow = (props) => {
                 id : artInfo.id
             };
 
-            console.log('ART')
-            console.log(art)
+            // console.log('ART')
+            // console.log(art)
             newArt.push(art);
         };
         // console.log(newArt)
@@ -75,6 +75,7 @@ const Artshow = (props) => {
 
             try {
                 let response = await importAll(array);
+                setAllArt(response);
                 // console.log(response)
                 // console.log(JSON.parse(response))
                 // let response = await getArt();
