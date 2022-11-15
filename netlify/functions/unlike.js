@@ -5,7 +5,7 @@ const querystring = require("querystring");
 const KEY = process.env.REACT_APP_API_KEY;
 const TBL = process.env.REACT_APP_API_ID;
 
-const unlike = async (event, context) => {
+const handler = async (event, context) => {
 
     return { 
         statusCode: 200,
@@ -14,4 +14,4 @@ const unlike = async (event, context) => {
     };
 }
 
-module.exports = { unlike }
+module.exports = { handler }

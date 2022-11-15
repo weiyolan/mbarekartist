@@ -4,7 +4,7 @@ const querystring = require("querystring");
 const KEY = process.env.REACT_APP_API_KEY;
 const TBL = process.env.REACT_APP_API_ID;
 
-const like = async (event, context) => {
+const handler = async (event, context) => {
 
     const params = querystring.parse(event.body);
     console.log(params);
@@ -43,4 +43,4 @@ const like = async (event, context) => {
     };
 }
 
-module.exports = { like }
+module.exports = { handler }
