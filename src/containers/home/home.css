@@ -5,10 +5,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    overflow: scroll;
+    overflow: hidden;
     /* backgroun */
-    height:100vh;
+    /* height:100vh; */
     /* width:100%; */
+
+    width: 100vw;
+    height: 100vh;
 
     display: flex;
     position: relative;
@@ -51,7 +54,7 @@ margin-bottom: 40px;
     border:2px solid transparent;
     transition: all 0.2s ease;
     font-weight: bolder;
-    filter: drop-shadow(0 0 0.6rem rgba(0, 0, 0, 0.342));
+    /* filter: drop-shadow(0 0 0.6rem rgba(0, 0, 0, 0.342)); */
 
     /* outline: 2px solid transparent; */
 }
@@ -130,6 +133,8 @@ margin-bottom: 40px;
     .home__container {
         background-image: url('../../images/layout/homecompressedmobile.png');
         background-position: left;
+        overflow: scroll;
+
     }
 
     .home__contents-right {

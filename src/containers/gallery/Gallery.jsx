@@ -17,7 +17,7 @@ const Gallery = () => {
     }
 
     useEffect(()=>{
-        console.log('styleFlag updated: ' + funnyFlag)
+        // console.log('styleFlag updated: ' + funnyFlag)
     })
 
     const closeGallery = () => {

@@ -32,7 +32,7 @@ function App() {
                 <Route index element={<Home formAppear={contactAppear}/>}/>
                 <Route path='home' element={<Home formAppear={contactAppear}/>}/>
                 <Route path="gallery" element={<Gallery />}/>
-                <Route path="mbarek/*" element={<SecureUpload />}/>
+                {/* <Route path="mbarek/*" element={<SecureUpload />}/> */}
                 {/* <Route path="mbarek/upload" element={<Upload />}/> */}
 
             </Routes>

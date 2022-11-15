@@ -21,18 +21,18 @@ const MakeCarousel = (props) => {
     })
 
     useEffect(()=>{
-        async function getArt() {
-            await axios.get("http://localhost:4000/api/").then(res => {
-            let art = res.data.art;
-            setAllArt(art);
-            // console.log('In axios.get:')
-            // props.setOutdated(false);
+        // async function getArt() {
+        //     await axios.get("http://localhost:4000/api/").then(res => {
+        //     let art = res.data.art;
+        //     setAllArt(art);
+        //     // console.log('In axios.get:')
+        //     // props.setOutdated(false);
 
-            }).catch((e)=>{
-                console.log(e)
-            });
-        }
-        getArt()
+        //     }).catch((e)=>{
+        //         console.log(e)
+        //     });
+        // }
+        // getArt()
     },[]);
     // useEffect(()=>console.log((props.children)),[props])
 

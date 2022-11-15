@@ -12,6 +12,28 @@ import {Gallery, Home, Upload, SecureUpload} from './containers'
 import {ProtectedRoute} from './components'
 import reportWebVitals from './reportWebVitals';
 
+// const router = createBrowserRouter([
+//   {
+//     path: "/*",
+//     element: <App/>,
+//     children: [{
+//       path: "gallery",
+//       element: <Gallery />,
+//       },{
+//       path: "home",
+//       element:<Home/>,
+//       },{
+//       path: "mbarek/*",
+//       element:<SecureUpload/>,
+//       children: [{
+//         path:"upload",
+//         element:<ProtectedRoute><Upload/></ProtectedRoute>,
+//         }],
+//       }
+//     ],
+//   },
+// ]);
+
 const router = createBrowserRouter([
   {
     path: "/*",
@@ -22,13 +44,6 @@ const router = createBrowserRouter([
       },{
       path: "home",
       element:<Home/>,
-      },{
-      path: "mbarek/*",
-      element:<SecureUpload/>,
-      children: [{
-        path:"upload",
-        element:<ProtectedRoute><Upload/></ProtectedRoute>,
-        }],
       }
     ],
   },

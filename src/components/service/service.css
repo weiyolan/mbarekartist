@@ -3,7 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     /* flex-basis: 150px; */
-    max-width: 200px;
+    max-width: 150px;
     /* position:relative; */
     justify-content: space-around;
     align-items: center;
@@ -54,7 +54,6 @@
 
 @media only screen and (max-width:900px) {
     .service__container {
-        max-width: 100%;
         width: 100%;
     }
 }@media only screen and (max-width:700px) {
