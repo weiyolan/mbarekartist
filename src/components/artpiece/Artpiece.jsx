@@ -9,27 +9,6 @@ const Artpiece = (props) => {
     let [liked,setLiked] = useState(false);
     let [likeload,setLikeload] = useState(false);
 
-
-    // async function unlike(id) {
-    //     let [name, oldlikes] = await axios.get(`https://api.airtable.com/v0/appfB05UOD1hI2FE4/art/${id}`,{headers: {Authorization: "Bearer keyoGVRavQjrgVp6e"}}).then((resp)=>{
-    //         return [resp.data.fields.name, resp.data.fields.likes]
-    //     }).catch(e=>e);
-
-    //     let newData = {records:[
-    //         {id: id,
-    //         fields:{
-    //             name: name,
-    //             likes: oldlikes-1
-    //         }}
-    //     ]};
-        
-    //     axios.patch(`https://api.airtable.com/v0/appfB05UOD1hI2FE4/art`, newData, {
-    //         headers: {
-    //             Authorization: "Bearer keyoGVRavQjrgVp6e", 
-    //             "Content-Type": "application/json"
-    //         }}).then((res)=>{return res}).catch(e=>e)
-    // };
-
     const plusOne = () => {
         // let prevLike = likes;
         async function tryLike() {
@@ -40,7 +19,7 @@ const Artpiece = (props) => {
                 headers: {
                     'Content-Type': 'application/json'
                     },
-                body: JSON.stringify(props.artID)
+                body: JSON.stringify({id:props.artID})
             }).then((res)=>{    
                 setLiked(true);
                 setLikeload(false)
@@ -61,7 +40,7 @@ const Artpiece = (props) => {
                     headers: {
                         'Content-Type': 'application/json'
                         },
-                    body: JSON.stringify(props.artID)
+                    body: JSON.stringify({id:props.artID})
                 }).then((res)=>{    
                 setLiked(false);
                 setLikeload(false);
@@ -92,7 +71,7 @@ const Artpiece = (props) => {
         <div className='artpiece__card'>
             <img src={props.src} onClick={()=>{props.handleClick(props.myKey)}}/>
             <Button onClick={plusOne} className='button'> 
-                {liked && 'Liked '}❤️{likes}
+                {likeload?(liked?'':'Liked '):(liked?'Liked ':'')}❤️{likes}
             </Button>
         </div>
     )

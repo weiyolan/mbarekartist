@@ -20,23 +20,51 @@ const MakeCarousel = (props) => {
         }
     })
 
+
+    async function importAll(r) {
+        let newArt = [];
+        let info = await fetch('/.netlify/functions/getInfo').then(res=>res.json());
+
+        for (const [index, item] of r.keys().entries()) {
+            // TEST FOR NEW ART TO BE CREATED, NOT DOING ANYTHING FOR NOW: ONLY IN CASE OF NEW ART IN FUTURE
+            // if (item.replace('./','').split('-')[0] !== 'art') {rename(r(item),item,index)}
+            let artName =  item.replace('./','');
+            let artInfo = info.filter((art)=>{return art.fields.name === artName})[0];
+            
+            const art = {
+                artImage : r(item),
+                name : artName,
+                likes : artInfo.fields.likes,
+                id : artInfo.id
+            };
+
+            newArt.push(art);
+        };
+        return newArt
+    };
+
+
     useEffect(()=>{
-        // async function getArt() {
-        //     await axios.get("http://localhost:4000/api/").then(res => {
-        //     let art = res.data.art;
-        //     setAllArt(art);
-        //     // console.log('In axios.get:')
-        //     // props.setOutdated(false);
+        const fetchArt = async () => {
+            let array = require.context('../../images/work', false, /.*/);
+            
+            try {
+                let response = await importAll(array);
+                setAllArt(response);
+                // console.log(response)
+                // console.log(JSON.parse(response))
+                // let response = await getArt();
+                // setAllArt(response);
+                // console.log(art)
+                return response
+            } catch (err) {
+                console.log(err)
+            }
+        }
 
-        //     }).catch((e)=>{
-        //         console.log(e)
-        //     });
-        // }
-        // getArt()
+        fetchArt();
+
     },[]);
-    // useEffect(()=>console.log((props.children)),[props])
-
-    
 
     return (
         <div className='carousel__container' style={props.visibleStyle}>
