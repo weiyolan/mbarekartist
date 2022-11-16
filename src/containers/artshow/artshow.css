@@ -22,6 +22,16 @@
     margin: 0 auto;
 }
 
+/* .gallery {
+    display: flex;
+    flex-wrap: column wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width:100;
+    margin: 0 auto;
+*/
+
 .gallery__delete  {
     display: flex;
     position: relative;
@@ -32,8 +42,6 @@
     align-items: flex-start;   /* grid-template-columns: repeat(7,100px); */
     flex-wrap: wrap;
 }
-
-
 
 
 @media screen and (min-width: 450px) {

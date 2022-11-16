@@ -1,3 +1,10 @@
+.navbar-collapse {
+    background-color: #ffffffb0;
+    backdrop-filter: blur(2px);
+    border-radius: 5px;
+}
+
+
 .header__navbar {
     background-color: #ffffff31;
     position: fixed;

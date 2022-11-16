@@ -8,6 +8,10 @@
 
     max-width: 100%;
     width: 100%;
+
+    /* min-width: 100px;
+    max-width: 300px; */
+
     /* border: 2px  */
     /* outline: solid 10px var(--orange-blue-text); */
     /* outline: solid 2px rgb(0, 0, 0); */
@@ -26,6 +30,7 @@
 .artpiece__card img, .card__delete img {
     width: 102%;
     height: 102%;
+
 
     object-fit: cover;
     /* height:120%; */

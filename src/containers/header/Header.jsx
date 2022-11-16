@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,11 +9,15 @@ import {NavLink,Link} from 'react-router-dom';
 import './header.css';
 
 function Header(props) {
+    const [expanded, setExpanded] = useState(false);
 
+    const toggleNav = () => {
+        setExpanded((current) => current?false:true)
+    }
     // console.log(props)
 
     return (
-        <Navbar className="header__navbar" collapseOnSelect  bg="none" variant="light" expand="sm">
+        <Navbar className="header__navbar" expanded={expanded} bg="none" variant="light" expand="sm">
         <Container>
             <Link to='home'>
             <Navbar.Brand>
@@ -26,12 +30,12 @@ function Header(props) {
                 />{' '}
             </Navbar.Brand></Link>
 
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Toggle onClick={toggleNav} aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link><NavLink to="home">Home</NavLink></Nav.Link>
-                    <Nav.Link><NavLink to="gallery">Gallery</NavLink></Nav.Link>
-                    <Nav.Link onClick={props.formAppear}>Contact</Nav.Link>
+                    <Nav.Link onClick={toggleNav}><NavLink to="home">Home</NavLink></Nav.Link>
+                    <Nav.Link onClick={toggleNav}><NavLink to="gallery">Gallery</NavLink></Nav.Link>
+                    <Nav.Link onClick={()=>{props.formAppear();toggleNav()}}>Contact</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Container>

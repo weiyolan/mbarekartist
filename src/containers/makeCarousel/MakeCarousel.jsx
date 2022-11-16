@@ -20,7 +20,6 @@ const MakeCarousel = (props) => {
         }
     })
 
-
     async function importAll(r) {
         let newArt = [];
         let info = await fetch('/.netlify/functions/getInfo').then(res=>res.json());
@@ -43,7 +42,6 @@ const MakeCarousel = (props) => {
         return newArt
     };
 
-
     useEffect(()=>{
         const fetchArt = async () => {
             let array = require.context('../../images/work', false, /.*/);
@@ -51,11 +49,6 @@ const MakeCarousel = (props) => {
             try {
                 let response = await importAll(array);
                 setAllArt(response);
-                // console.log(response)
-                // console.log(JSON.parse(response))
-                // let response = await getArt();
-                // setAllArt(response);
-                // console.log(art)
                 return response
             } catch (err) {
                 console.log(err)
