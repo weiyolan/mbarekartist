@@ -59,7 +59,6 @@
     /* font-size:  */
 }
 
-
 .card__delete span {
     font-size: 1rem;
     font-weight: bolder;
@@ -70,4 +69,11 @@
     font-size: 1.1rem;
     
     /* transform: scale(1,05); */
+}
+
+@media screen and (max-width:450px) {
+    .artpiece__card .button {
+        padding:5px 10px;
+        font-size: 0.8rem;
+    }
 }

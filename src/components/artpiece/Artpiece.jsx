@@ -70,9 +70,9 @@ const Artpiece = (props) => {
     return (
         <div className='artpiece__card'>
             <img src={props.src} onClick={()=>{props.handleClick(props.myKey)}}/>
-            <Button onClick={plusOne} className='button'> 
+            {props.likeError && <Button onClick={plusOne} className='button'> 
                 {likeload?(liked?'':'Liked '):(liked?'Liked ':'')}❤️{likes}
-            </Button>
+            </Button>}
         </div>
     )
 }

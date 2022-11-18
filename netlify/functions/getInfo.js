@@ -32,14 +32,15 @@ const handler = async (event, context) => {
         return { 
             statusCode: 200,
             body: JSON.stringify(info),
-            ok:true
+            ok: true
         }
         
     } catch (err) {
+        // console.log(err.cause)
         return {
                 statusCode: 404,
-                body: err.toString(),
-                ok:false
+                body: JSON.stringify(err.cause),
+                ok: false
             };
     };
 }

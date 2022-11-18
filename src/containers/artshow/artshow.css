@@ -3,7 +3,7 @@
 .artshow__container {
     /* display : flex; */
     position: relative;
-    padding : 20px;
+    padding : 0px;
     max-width: 90%;
     /* justify-content: flex-start; */
     /* align-items: center; */
@@ -17,7 +17,7 @@
 .gallery {
     display: block;
     width: 100%;
-    columns: 15px 2 ;
+    columns: 1 ;
     column-gap: 0.8rem;
     margin: 0 auto;
 }
