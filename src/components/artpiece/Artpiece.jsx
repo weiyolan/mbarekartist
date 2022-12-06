@@ -1,13 +1,15 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import './artpiece.css';
 import Button from 'react-bootstrap/Button';
-import axios from 'axios';
 
 const Artpiece = (props) => {
 
     let [likes,setLikes] = useState(props.likes);
     let [liked,setLiked] = useState(false);
     let [likeload,setLikeload] = useState(false);
+
+    let [landscape,setLandscape] = useState(true);
+    let [style,setStyle] = useState('landscape__card')
 
     const plusOne = () => {
         // let prevLike = likes;
@@ -67,9 +69,22 @@ const Artpiece = (props) => {
         }
     }
 
+    function handleLoad(img) {
+        
+        setLandscape(img.naturalWidth >= img.naturalHeight);
+    } 
+
+    useEffect(() => {
+        //Set the right css style variable: 1 or 2 rows.
+        setStyle(landscape?'landscape__card':'portrait__card')   
+
+    }, [landscape])
+    
+
     return (
-        <div className='artpiece__card'>
-            <img src={props.src} onClick={()=>{props.handleClick(props.myKey)}}/>
+        <div className={'artpiece__card ' + style}>
+            <img src={props.src} onLoad={(e)=>handleLoad(e.target)} onClick={()=>{props.handleClick(props.myKey)}}/>
+            
             {props.likeError && <Button onClick={plusOne} className='button'> 
                 {likeload?(liked?'':'Liked '):(liked?'Liked ':'')}❤️{likes}
             </Button>}

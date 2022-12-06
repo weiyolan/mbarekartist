@@ -10,7 +10,6 @@ const Home = (props) => {
   
     return (
         <div className='home__container'>
-            <div className='container'>
                 <div className='home__contents-right'>
                     <div className='buttons'> 
                         <Link to="/gallery"><Button className='home__button' variant='dark'>View Collection</Button></Link>
@@ -31,7 +30,6 @@ const Home = (props) => {
                         <Service alt="fourth service" title="Lamps and Decoration." src={service4}/>
                     </div>
                 </div>  
-            </div>
         </div>
     )
 }
